@@ -1,0 +1,5 @@
+Bundle-Name: TestContributor
+Bundle-SymbolicName: TestContributor
+Bundle-Version: 1.0.0
+Export-Package: testContributor
+Web-ContextPath: /custom-ckeditor-plugin

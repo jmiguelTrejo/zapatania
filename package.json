@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "themes/zapatania-theme",
+            "client-extensions/liferay-zapatania-admin-theme"
+        ]
+    }
+}

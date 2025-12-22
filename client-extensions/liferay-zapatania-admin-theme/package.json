@@ -1,0 +1,8 @@
+{
+	"liferayDesignPack": {
+		"baseTheme": "styled"
+	},
+	"main": "package.json",
+	"name": "@liferay/liferay-zapatania-admin-theme",
+	"version": "1.0.0"
+}
