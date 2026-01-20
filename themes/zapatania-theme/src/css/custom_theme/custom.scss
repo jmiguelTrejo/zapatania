@@ -1,4 +1,10 @@
+@import "fonts";
+@import "colors";
 .zapatania-container{
-    @import "lfr";
     @import "banner";
+    @import "card";
+    @import "header";
+    @import "layoutTwo";
+    @import "lfr";
+    @import "text_titles";
 }

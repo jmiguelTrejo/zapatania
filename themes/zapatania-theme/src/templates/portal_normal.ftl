@@ -9,6 +9,9 @@
 
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
+	<link rel="stylesheet" href="${javascript_folder}/owlCarousel/assets/owl.carousel.min.css" />
+	<link rel="stylesheet" href="${javascript_folder}/owlCarousel/assets/owl.theme.default.min.css" />
+
 	<@liferay_util["include"] page=top_head_include />
 </head>
 
@@ -56,7 +59,7 @@
 				</div>
 				-->
 
-				<div class="navbar navbar-classic navbar-expand-md navbar-light pb-3">
+				<div class="navbar navbar-classic navbar-expand-md navbar-light">
 					<div class="container-fluid container-fluid-max-xl">
 
 						<#include "${full_templates_path}/navigation.ftl" />
@@ -91,6 +94,7 @@
 
 <script data-senna-track="temporary" type="text/javascript" src="${javascript_folder}/bootstrap.bundle.min.js" ></script>
 <script data-senna-track="temporary" type="text/javascript" src="${javascript_folder}/owlCarousel/owl.carousel.min.js" ></script>
+<script data-senna-track="temporary" type="text/javascript" src="${javascript_folder}/main.js" ></script>
 
 
 </body>

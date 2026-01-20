@@ -1,0 +1,58 @@
+.poetry-card{
+    img{
+        border-radius: 20px;
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+    }
+    .title{
+        font-size: 1.5rem;
+        color: var(--black, #000000);
+        font-weight: 700;
+    }
+    .description{
+        font-size: 1rem;
+        color: var(--black, #000000);
+    }
+}
+@media (max-width: 992px) {
+    .poetry-card {
+        img {
+            max-height: 220px;
+        }
+        .title {
+            font-size: 1.2rem;
+        }
+        .description {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .poetry-card {
+        img {
+            max-height: 160px;
+        }
+        .title {
+            font-size: 1rem;
+        }
+        .description {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .poetry-card {
+        img {
+            max-height: 100px;
+        }
+        .title {
+            font-size: 0.9rem;
+        }
+        .description {
+            font-size: 0.85rem;
+        }
+    }
+}

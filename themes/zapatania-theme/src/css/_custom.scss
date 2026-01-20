@@ -105,12 +105,3 @@ body {
 }
 
 
-@font-face {
-    font-family: "MyCustomFont";
-    src: url("./../fonts/dancing-script-regular.otf") format("opentype");
-}
-
-.myClass, .cursive{
-	font-family: "MyCustomFont", Arial, sans-serif !important;
-}
-

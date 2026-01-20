@@ -1,0 +1,5 @@
+Bundle-Name: BlogsEntry
+Bundle-SymbolicName: blogsentry
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.blogs.web;bundle-version="6.0.137"
+Portal-Bundle-Version: 7.4.3.132

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "DancingScript";
+    src: url("./../fonts/dancing-script-regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "TimesNewRoman";
+    src: url("./../fonts/times-new-roman.ttf") format("truetype");
+}
+
+body{
+    font-family: 'TimesNewRoman', Times, serif;
+    font-size: 16px;
+}
+
+.dancing-script, .myClass, .cursive{
+	font-family: "DancingScript", Arial, sans-serif;
+}
+
+

@@ -18,6 +18,10 @@
                     @2025 Todos los derechos reservados
                 </div>
             </div>
+            <div class="row" >
+            hola mundo
+                <@liferay.user_personal_bar />
+            </div>
         </div>
         <div class="w-100 greca-bkg">
         </div>

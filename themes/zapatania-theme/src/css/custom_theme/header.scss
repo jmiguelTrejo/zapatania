@@ -1,0 +1,35 @@
+.navbar{
+    max-width: 100%;
+    padding: 0px 10px;
+    padding-top: 10px;
+    width: 100%;
+    .navbar-collapse{
+        justify-content: end;
+    }
+    .navbar-brand{
+        margin-right: 40px;
+    }
+    .nav-item{
+        font-size: 1.25rem;
+        &.active, &:hover{
+            color: var(--black, #000000);
+            text-decoration: underline;
+            text-decoration-color: var(--primary-purple, rgb(75, 0, 130));
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+        .nav-link{
+            font-size: 1.25rem;
+        }
+    }
+    .dropdown{
+        .dropdown-toggle {
+            border: none;
+            margin-left: 15px;
+            &:hover{
+                background-color: var(--alpha-purple, rgba(75, 0, 130, 0.95));
+                color: var(--white, #ffffff);
+            }
+        }
+    }
+}

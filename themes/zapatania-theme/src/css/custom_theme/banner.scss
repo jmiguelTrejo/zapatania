@@ -25,7 +25,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(75, 0, 130, 0.85) 0%, rgba(138, 43, 226, 0.75) 100%);
+    background: linear-gradient(90deg, var(--alpha-purple, rgba(75, 0, 130, 0.95)) 10%, 
+    var(--alpha-purple-transparent, rgba(75, 0, 130, 0)) 50%, var(--alpha-purple, rgba(75, 0, 130, 0.95)) 90%);
     z-index: 2;
 }
 
@@ -39,7 +40,7 @@
 }
 
 .banner-principal__title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 20px 0;
@@ -59,11 +60,11 @@
 
 .banner-principal__button {
     display: inline-block;
-    padding: 14px 32px;
-    background-color: rgba(75, 0, 130, 0.9);
+    padding: 15px 20px;
+    background-color: var(--primary-purple, rgb(75, 0, 130));
     color: #ffffff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 30px;
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -72,9 +73,11 @@
 }
 
 .banner-principal__button:hover {
-    background-color: rgba(138, 43, 226, 0.95);
+    background-color: var(--alpha-secondary-purple, rgba(138, 43, 226, 0.95));
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px var(--default-shadow-color, #000000);
+    opacity: var(--default-shadow-opacity, 0.3);
+    transition: all 0.3s ease;
 }
 
 .banner-principal__button:active {
@@ -108,10 +111,10 @@
 
 @media (max-width: 480px) {
     .banner-principal__title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .banner-principal__description {
-        font-size: 0.9rem;
+        font-size: 0.875rem;
     }
 }

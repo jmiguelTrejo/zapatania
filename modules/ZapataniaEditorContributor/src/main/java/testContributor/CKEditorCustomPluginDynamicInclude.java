@@ -23,6 +23,13 @@ public class CKEditorCustomPluginDynamicInclude implements DynamicInclude {
 
         URL entryURL = bundle.getEntry("/META-INF/resources/js" + "/custom_ckeditor_plugin.js");
         StreamUtil.transfer(entryURL.openStream(), response.getOutputStream(), false);
+        URL entryURL2 = bundle.getEntry("/META-INF/resources/js" + "/customcolorbutton/plugin.js");
+        StreamUtil.transfer(entryURL2.openStream(), response.getOutputStream(), false);
+        URL entryURL3 = bundle.getEntry("/META-INF/resources/js" + "/customcolorbutton/lang/en.js");
+        StreamUtil.transfer(entryURL3.openStream(), response.getOutputStream(), false);
+        URL entryURL4 = bundle.getEntry("/META-INF/resources/js" + "/customcolorbutton/lang/es.js");
+        StreamUtil.transfer(entryURL4.openStream(), response.getOutputStream(), false);
+
     }
 
     @Override
