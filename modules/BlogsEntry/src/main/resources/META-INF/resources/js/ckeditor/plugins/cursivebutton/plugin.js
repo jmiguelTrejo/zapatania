@@ -5,17 +5,14 @@ CKEDITOR.plugins
         {
             init: function (editor) {
 
-                console.log('CKEditor version:', CKEDITOR.version);
                 var instance = this;
 
                 editor.addCommand('cursivebutton', {
                     canUndo: true,
                     exec: function (editor, callback) {
-                        console.log('exec cursivebutton');
                         instance._onSelectedContentChange(editor, callback);
                     }
                 });
-                console.log('intento', editor);
 
                 if (editor.ui.addButton) {
                     editor.ui
@@ -31,7 +28,6 @@ CKEDITOR.plugins
             },
 
             _onSelectedContentChange: function (editor, callback) {
-                console.log('onSelectedContentChange cursivebutton');
                 var selection = editor.getSelection();
 
                 if (selection.getType() === CKEDITOR.SELECTION_TEXT) {

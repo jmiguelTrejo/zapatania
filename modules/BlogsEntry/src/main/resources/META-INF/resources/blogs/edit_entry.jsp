@@ -94,7 +94,7 @@ renderResponse.setTitle(blogsEditEntryDisplayContext.getPageTitle(resourceBundle
 							cssClass="mx-md-auto"
 							md="8"
 						>
-							<div class="cover-image-caption <%= (blogsEditEntryDisplayContext.getCoverImageFileEntryId() == 0) ? "invisible d-none" : "" %>">
+							<div class="cover-image-caption <%= (blogsEditEntryDisplayContext.getCoverImageFileEntryId() == 0) ? "invisible d-none" : "d-none" %>">
 								<small>
 									<textarea 
 										name="coverImageCaptionEditor" 
