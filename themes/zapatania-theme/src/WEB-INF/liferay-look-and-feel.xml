@@ -16,11 +16,13 @@
 			<setting configurable="false" key="show-site-name-default" value="true" />
 			<setting configurable="false" key="show-site-name-supported" value="true" />
 			<setting configurable="true" key="wrap-widget-page-content" type="checkbox" value="true" />
+
 			<setting configurable="true" key="footer-text" type="text" value="Env&iacute;anos tus comentarios" />
 			<setting configurable="true" key="facebook-url" type="text" value="https://www.facebook.com/zapatania" />
 			<setting configurable="true" key="x-url" type="text" value="https://www.x.com/zapatania" />
 			<setting configurable="true" key="youtube-url" type="text" value="https://www.youtube.com/zapatania" />
 			<setting configurable="true" key="email" type="text" value="contacto@zapatania.com" />
+			<setting configurable="true" key="subscribe-url" type="text" value="https://www.zapatania.com/subscribe" />
 		</settings>
 
 		<portlet-decorator id="barebone" name="Barebone">

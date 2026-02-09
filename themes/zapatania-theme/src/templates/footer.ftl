@@ -1,3 +1,5 @@
+<#include init />
+
 <#if show_footer>
     <footer id="footer">
         <div class="container">
@@ -8,14 +10,14 @@
                     </div>
                     <div class="col-12 mb-3">
                     </div>
-                    <div class="col-12 mb-3">
-                        <a href="${facebook_url}" target="_blank">
+                    <div class="col-12 mb-3 d-flex">
+                        <a class="circle-icon" href="${facebook_url}" target="_blank">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="${x_url}" target="_blank">
+                        <a class="circle-icon dark"href="${x_url}" target="_blank">
                             <i class="fa-brands fa-x-twitter"></i>
                         </a>
-                        <a href="${youtube_url}" target="_blank">
+                        <a class="square-icon" href="${youtube_url}" target="_blank">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </div>
@@ -28,7 +30,7 @@
                         <h3>Contacto</h3>
                     </div>
                     <div class="col-12 mb-3">
-                        <p>
+                        <p class="mt-5">
                             <i class="fa-solid fa-envelope"></i>
                             ${email}
                         </p>
@@ -41,7 +43,7 @@
                     <div class="col-12 mb-3">
                         <form action="${subscribe_url}" method="post">
                             <input type="email" name="email" placeholder="Email" />
-                            <button type="submit">Suscribirse</button>
+                            <button class="btn mt-3" type="submit"> Enviar </button>
                         </form>
                     </div>
                 </div>
