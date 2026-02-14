@@ -14,7 +14,20 @@
                 <#if fileEntry?has_content>
                     <#assign url = "/documents/${fileEntry.groupId}/${fileEntry.folderId}/${fileEntry.fileName}/${fileEntry.uuid}" />
                     <img src="${url}" alt="${curEntry.getTitle(locale)?html}" class="principal-carrusel-image"/>
+                    <#else>
+                        <img src="/documents/d/guest/chris_muschard-ink-5067880_1280"  alt="imagen generica blog" class="principal-carrusel-image"> />
                 </#if>
+                <h4>
+                    ${curEntry.title}
+                </h4>
+                <p>
+                    <#if curEntry.description?has_content>
+                        ${curEntry.description}
+                    <#else>
+                        ${curEntry.summary}
+                    </#if>
+                </p>
+							
             </div>
         </#list>
     </#if>

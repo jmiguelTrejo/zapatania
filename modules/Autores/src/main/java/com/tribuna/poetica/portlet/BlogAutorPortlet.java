@@ -1,12 +1,31 @@
 package com.tribuna.poetica.portlet;
 
-import com.tribuna.poetica.constants.BlogAutorPortletKeys;
-
+import com.liferay.blogs.model.BlogsEntry;
+import com.liferay.expando.kernel.model.ExpandoColumn;
+import com.liferay.expando.kernel.model.ExpandoTable;
+import com.liferay.expando.kernel.model.ExpandoValue;
+import com.liferay.expando.kernel.service.ExpandoColumnLocalService;
+import com.liferay.expando.kernel.service.ExpandoTableLocalService;
+import com.liferay.expando.kernel.service.ExpandoValueLocalService;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.tribuna.poetica.constants.BlogAutorPortletKeys;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import javax.portlet.Portlet;
-
-import org.osgi.service.component.annotations.Component;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author boots
@@ -26,4 +45,75 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class BlogAutorPortlet extends MVCPortlet {
+
+	@Override
+	public void doView(
+			RenderRequest renderRequest, RenderResponse renderResponse)
+		throws IOException, PortletException {
+
+		// INSERT_YOUR_CODE
+		long startTime = System.currentTimeMillis();
+
+
+		ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
+		long companyId = themeDisplay.getCompanyId();
+
+		// Retrieve the ExpandoTable for BlogsEntry and get the column "autor"
+		ExpandoTable expandoTable = null;
+		ExpandoColumn autorColumn = null;
+		try {
+			expandoTable = expandoTableLocalService.getDefaultTable(
+				companyId, BlogsEntry.class.getName() );
+			autorColumn = expandoColumnLocalService.getColumn(expandoTable.getTableId(), "autor");
+		} catch (PortalException e) {
+			// Could not get table or column, exit early
+			renderRequest.setAttribute("autores", new ArrayList<String>());
+			// Optionally log error
+		}
+
+		Set<String> autoresSet = new HashSet<>();
+		if (autorColumn != null) {
+			// Use dynamic query to fetch all ExpandoValues for the "autor" column (unique, non-repeated)
+			try {
+				List<ExpandoValue> autorValues = expandoValueLocalService.dynamicQuery(
+					DynamicQueryFactoryUtil
+						.forClass(ExpandoValue.class, this.getClass().getClassLoader())
+						.add( RestrictionsFactoryUtil.eq("columnId", autorColumn.getColumnId()))
+				);
+
+				for (ExpandoValue value : autorValues) {
+					String autor = value.getString();
+					if (autor != null && !autor.trim().isEmpty()) {
+						autoresSet.add(autor.trim());
+					}
+				}
+			} catch (Exception ex) {
+				// Optionally log error
+			}
+		}
+
+		List<String> autores = new ArrayList<>(autoresSet);
+		renderRequest.setAttribute("autores", autores);
+
+		// Calculate execution time
+		long endTime = System.currentTimeMillis();
+		long executionTime = endTime - startTime;
+		
+		// Log execution time (you can also pass it as an attribute if needed)
+		System.out.println("BlogAutorPortlet.doView() execution time: " + executionTime + " ms");
+		
+		// Optionally pass execution time to the view
+		renderRequest.setAttribute("executionTime", executionTime);
+
+		super.doView(renderRequest, renderResponse);
+	}
+
+	@Reference
+	private ExpandoColumnLocalService expandoColumnLocalService;
+
+	@Reference
+	private ExpandoTableLocalService expandoTableLocalService;
+
+	@Reference
+	private ExpandoValueLocalService expandoValueLocalService;
 }

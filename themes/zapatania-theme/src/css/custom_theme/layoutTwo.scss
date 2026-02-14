@@ -1,4 +1,11 @@
 .tribuna-dz{
     display: flex;
     width: 100%;
+    .col-3{
+        padding-right: 0!important;
+    }
+    .col-9 {
+        padding-left: 5%!important;
+        padding-right: 5%!important;
+    }
 }
