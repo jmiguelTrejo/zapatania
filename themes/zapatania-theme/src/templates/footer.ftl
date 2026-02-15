@@ -21,8 +21,8 @@
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </div>
-                    <div class="col-12">
-                        @2025 Todos los derechos reservados
+                    <div class="col-12 mt-4">
+                        @2026 Todos los derechos reservados
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -41,8 +41,8 @@
                         <h3>Suscribete</h3>
                     </div>
                     <div class="col-12 mb-3">
-                        <form action="${subscribe_url}" method="post">
-                            <input type="email" name="email" placeholder="Email" />
+                        <form id="subscribe-form" method="post">
+                            <input id="subscribe-form-email" type="email" name="email" placeholder="Email" />
                             <button class="btn mt-3" type="submit"> Enviar </button>
                         </form>
                     </div>
