@@ -1,4 +1,11 @@
+body{
+    overflow-x: hidden;
+}
+
 .portlet-decorate{
+    .portlet{
+        margin-bottom: 0;
+    }
     .portlet-content{
         border: none;
         padding: 0;

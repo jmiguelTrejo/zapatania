@@ -1,0 +1,35 @@
+.autores-container{
+    background-color: var(--background-purple,#e3d7eb);
+    .title{
+        background-color: var(--primary-purple,#4b0082);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        color: var(--white,#ffffff);
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 15px;
+        padding-left: 10px;
+    }
+    .nav-pills{
+        .nav-item{
+            margin-right: 15px;
+            &:last-child{
+                margin-right: 0px;
+            }
+            .nav-link{
+                background-color: transparent;
+                color: var(--black,#000000);
+                font-size: 1.25rem;
+                font-weight: 500;
+                padding: 0px;
+                text-decoration: none;
+                &.active{
+                    text-decoration: underline;
+                    text-decoration-color: var(--primary-purple,#4b0082);
+                    text-decoration-thickness: 2px;
+                    text-underline-offset: 4px;
+                }
+            }
+        }
+    }
+}

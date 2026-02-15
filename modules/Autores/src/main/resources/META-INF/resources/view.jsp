@@ -5,7 +5,7 @@
         <div class="col-1">
         </div>
         <div class="col-11">
-            <h1 class="text-center mb-4 title">Autores</h1>
+            <h1 class="mb-4 title">Autores</h1>
             <ul class="nav nav-pills mb-3" id="autorTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="nombre-tab" data-toggle="pill" href="#nombre" role="tab"

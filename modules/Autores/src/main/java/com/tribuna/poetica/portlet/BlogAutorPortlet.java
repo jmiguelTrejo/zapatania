@@ -51,10 +51,6 @@ public class BlogAutorPortlet extends MVCPortlet {
 			RenderRequest renderRequest, RenderResponse renderResponse)
 		throws IOException, PortletException {
 
-		// INSERT_YOUR_CODE
-		long startTime = System.currentTimeMillis();
-
-
 		ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
 		long companyId = themeDisplay.getCompanyId();
 
@@ -93,17 +89,10 @@ public class BlogAutorPortlet extends MVCPortlet {
 		}
 
 		List<String> autores = new ArrayList<>(autoresSet);
-		renderRequest.setAttribute("autores", autores);
+		Collections.sort(autores, String.CASE_INSENSITIVE_ORDER);
 
-		// Calculate execution time
-		long endTime = System.currentTimeMillis();
-		long executionTime = endTime - startTime;
+		renderRequest.setAttribute("autores", autores);
 		
-		// Log execution time (you can also pass it as an attribute if needed)
-		System.out.println("BlogAutorPortlet.doView() execution time: " + executionTime + " ms");
-		
-		// Optionally pass execution time to the view
-		renderRequest.setAttribute("executionTime", executionTime);
 
 		super.doView(renderRequest, renderResponse);
 	}
