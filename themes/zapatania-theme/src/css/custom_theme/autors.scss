@@ -32,4 +32,20 @@
             }
         }
     }
+    ul{
+        padding-left: 0px;
+        list-style: none;
+        li{
+            margin-bottom: 5px;
+            &.letter{
+                font-size: 1.25rem;
+                font-weight: 500;
+                margin-top: 10px;
+                text-transform: uppercase;
+            }
+            &.autor{
+                font-size: 1.25rem;
+            }
+        }
+    }
 }

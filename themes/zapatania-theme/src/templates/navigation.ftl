@@ -66,6 +66,7 @@
 				</div>
 
 			</#if>
+			<@liferay.user_personal_bar />
 		</div>
 	</div>
 </nav>

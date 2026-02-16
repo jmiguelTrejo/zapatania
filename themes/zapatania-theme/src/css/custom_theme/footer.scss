@@ -2,6 +2,10 @@
     background-color: var(--white, #ffffff);
     border-top: 1px solid var(--alpha-purple, rgba(75, 0, 130, 0.95));
     color: var(--black, #000000);
+    .container{
+        padding-bottom: 1rem;
+        padding-top: 3rem;
+    }
     .circle-icon {
         align-items: center;
         background-color: var(--white, #ffffff);
@@ -65,5 +69,15 @@
     button[type="submit"]:hover {
         background-color: var(--primary-purple, #4b0082);
         color: var(--white, #ffffff);
+    }
+    .footer-logo{
+        position: relative;
+        img{
+            height: auto;
+            position: absolute;
+            right: -40px;
+            top: -15px;
+            width: 100px;
+        }
     }
 }

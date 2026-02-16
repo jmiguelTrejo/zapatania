@@ -18,4 +18,21 @@ body{
 	font-family: "DancingScript", Arial, sans-serif;
 }
 
+.text-title{
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.text-subtitle{
+    letter-spacing: 2px;
+}
+
+h5{
+    &.text-subtitle{
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+}
 

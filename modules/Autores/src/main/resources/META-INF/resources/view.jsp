@@ -22,10 +22,15 @@
             </ul>
             <div class="tab-content" id="autorTabContent">
                 <div class="tab-pane fade show active" id="nombre" role="tabpanel" aria-labelledby="nombre-tab">
+                    <c:set var="letter" value="" scope="page" />
                     <c:if test="${not empty autores}">
                         <ul>
                             <c:forEach var="autor" items="${autores}">
-                                <li>${autor}</li>
+                                <c:if test="${empty letter or letter ne autor.substring(0,1)}">
+                                    <c:set var="letter" value="${autor.substring(0,1)}" scope="page" />
+                                    <li class="letter">${letter}</li>
+                                </c:if>
+                                <li class="autor">${autor}</li>
                             </c:forEach>
                         </ul>
                     </c:if>

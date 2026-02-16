@@ -22,14 +22,8 @@ import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-/**
- * @author boots
- */
 @Component(
 	property = {
 		"com.liferay.portlet.display-category=category.sample",

@@ -1,8 +1,5 @@
 package com.tribuna.poetica.constants;
 
-/**
- * @author boots
- */
 public class BlogAutorPortletKeys {
 
 	public static final String BLOGAUTOR =

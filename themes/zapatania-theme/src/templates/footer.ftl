@@ -37,6 +37,9 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <div class="col-12 footer-logo">
+                        <img src="${site_logo}" alt="${logo_description}" />
+                    </div>
                     <div class="col-12">
                         <h3>Suscribete</h3>
                     </div>
@@ -47,9 +50,6 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-5" >
-                <@liferay.user_personal_bar />
             </div>
         </div>
         <div class="w-100 greca-bkg">
