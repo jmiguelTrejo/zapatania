@@ -3,9 +3,10 @@
 <div class="owl-carousel owl-theme owl-principal-carrusel">
     <#if entries?has_content>
         <#list entries as curEntry>
-            <div class="item">
-                <#assign assetRenderer = curEntry.getAssetRenderer() />
-                <#assign customObj = assetRenderer.getAssetObject(curEntry.classPK) />
+            <#assign assetRenderer = curEntry.getAssetRenderer() />
+            <#assign customObj = assetRenderer.getAssetObject(curEntry.classPK) />
+            <#assign blogUrl = assetRenderer.getUrlTitle() />
+            <div class="item" onclick="window.location.href='/b/${blogUrl}?redirect=/es/home'">
                 <#assign fileEntry = "" />
                 <#if customObj.coverImageFileEntryId?has_content && customObj.coverImageFileEntryId gt 0>
                     <#assign fileEntry = dlAppService.getFileEntry(customObj.coverImageFileEntryId?number) />

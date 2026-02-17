@@ -3,6 +3,7 @@ Liferay.on('allPortletsReady', function() {
 });
 
 function initContactoForm() {
+    console.log('initContactoForm');
     $('#contacto-form').on('submit', function(e) {
         e.preventDefault();
         console.log('submit');

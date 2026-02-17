@@ -1,0 +1,86 @@
+
+.portlet-boundary_com_liferay_comment_page_comments_web_portlet_PageCommentsPortlet_{
+    form{
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        > div{
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            .lfr-discussion{
+                width: 100%;
+                &:first-of-type{
+                    border-top: none;
+                }
+                .comment-container{
+                    width: 100%;
+                    a{
+                        &.username{
+                            pointer-events: none;
+                        }
+                    }
+                }
+                .ratings{
+                    display: none;
+                }
+                .cke_chrome{
+                    border: none;
+                    .cke_inner{
+                        .cke_reset_all{
+                            display: none;
+                        }
+                        .cke_contents {
+                            border: 1px solid var(--primary-purple, rgb(75, 0, 130));
+                            border-radius: 30px;
+                        }
+                    }
+                }
+            }
+
+        }
+        .add-comment{
+            display: flex;
+            width: 50%;
+            .lfr-discussion-details{
+                display: none;
+            }
+            .show {
+                width: 100%;
+            }
+            .cke_chrome{
+                border: none;
+                .cke_inner{
+                    .cke_reset_all{
+                        display: none;
+                    }
+                    .cke_contents {
+                        border: 1px solid var(--primary-purple, rgb(75, 0, 130));
+                        border-radius: 30px;
+                    }
+                }
+            }
+            .cke_editable{
+                background-color: var(--white, #ffffff);
+            }
+
+        }
+    }
+    .btn-comment{
+        background-color: var(--primary-purple, rgb(75, 0, 130));
+        border-radius: 20px;
+        color: var(--white, #ffffff);
+        &:hover{
+            background-color: var(--primary-purple-dark, rgb(50, 0, 100));
+            color: var(--white, #ffffff);
+        }
+        &.btn-cancel{
+            background-color: var(--white, #ffffff);
+            color: var(--primary-purple, rgb(75, 0, 130));
+            &:hover{
+                background-color: var(--primary-purple-light, rgb(100, 0, 150));
+                color: var(--white, #ffffff);
+            }
+        }
+    }
+}

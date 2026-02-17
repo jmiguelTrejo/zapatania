@@ -1,0 +1,5 @@
+Bundle-Name: CommentTaglibFragment
+Bundle-SymbolicName: commenttaglibfragment
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.comment.taglib;bundle-version="4.1.6"
+Portal-Bundle-Version: 7.4.3.132

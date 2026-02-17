@@ -1,0 +1,5 @@
+Bundle-Name: CommentsFragment
+Bundle-SymbolicName: commentsfragment
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.comment.page.comments.web;bundle-version="5.0.21"
+Portal-Bundle-Version: 7.4.3.132

@@ -8,14 +8,11 @@ import javax.portlet.Portlet;
 
 import org.osgi.service.component.annotations.Component;
 
-/**
- * @author boots
- */
 @Component(
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.header-portlet-css=/css/main.css",
-		"com.liferay.portlet.footer-portlet-js=/js/main.js",
+		"com.liferay.portlet.footer-portlet-javascript=/js/main.js",
 		"com.liferay.portlet.instanceable=true",
 		"javax.portlet.display-name=Contacto",
 		"javax.portlet.init-param.template-path=/",

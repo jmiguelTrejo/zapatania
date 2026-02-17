@@ -3,6 +3,8 @@
 .zapatania-container{
     @import "banner";
     @import "card";
+    @import "comments";
+    @import "contacto";
     @import "header";
     @import "layoutTwo";
     @import "lfr";
@@ -11,4 +13,11 @@
     @import "owl_principal";
     @import "owl_section";
     @import "autors";
+}
+
+.cke_editable{
+    background-color: var(--white, #ffffff)!important;
+    &:focus{
+        background-color: var(--white, #ffffff)!important;
+    }
 }
