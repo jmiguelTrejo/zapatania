@@ -18,6 +18,7 @@
         margin-bottom: 150px;
         padding: 20px;
         .white-box-content{
+            padding: 20px 100px;
             .purple-box{
                 background-color: var(--background-contact, rgb(177 158 212));
                 border-radius: 40px;
@@ -30,6 +31,7 @@
                 }
             }
             .form-container{
+                margin-top: 5rem;
                 .form-group{
                     label{
                         font-size: 1.2rem;
@@ -57,7 +59,5 @@
 
 
     }
-
-
 
 }

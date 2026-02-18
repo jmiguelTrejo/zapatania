@@ -135,6 +135,9 @@ renderResponse.setTitle(blogsEditEntryDisplayContext.getPageTitle(resourceBundle
 									cols="80">
 									<%= blogsEditEntryDisplayContext.getContent() %>
 								</textarea>
+								<div id="customEditorBlogContent" class="d-none">
+									<%= blogsEditEntryDisplayContext.getContent() %>
+								</div>
 
 							</div>
 
@@ -453,9 +456,11 @@ else {
 		var editor = event.editor;
 		editor.on('change', function() {
 			const data = editor.getData();
+			console.log("bosque:::", data);
 			window[`_com_liferay_blogs_web_portlet_BlogsAdminPortlet_onChangeContentEditor`](data);
 			if( editor.element.getId() === 'editorBlog' ) {
 				document.getElementById('editorBlog').innerHTML = data;
+				document.getElementById('customEditorBlogContent').innerHTML = data;
 			}
 		});
 	});
@@ -477,6 +482,6 @@ else {
 		]
 	} );
 
-	window[`_com_liferay_blogs_web_portlet_BlogsAdminPortlet_contentEditor`] = document.getElementById('editorBlog');
+	window[`_com_liferay_blogs_web_portlet_BlogsAdminPortlet_contentEditor`] = document.getElementById('customEditorBlogContent');
 
 </script>

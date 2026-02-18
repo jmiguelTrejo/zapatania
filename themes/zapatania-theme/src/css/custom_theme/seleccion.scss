@@ -1,0 +1,18 @@
+.selection-container{
+    margin-top: 20px;
+    .selection-row{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+        width: 100%;
+        .selection-item{
+            width: 23%;
+            .selection-image{
+                border-radius: 30px;
+                height: 150px;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+}
