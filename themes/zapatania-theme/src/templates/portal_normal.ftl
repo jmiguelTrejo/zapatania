@@ -94,8 +94,6 @@
 
 <script data-senna-track="temporary" type="text/javascript" src="${javascript_folder}/bootstrap.bundle.min.js" ></script>
 <script data-senna-track="temporary" type="text/javascript" src="${javascript_folder}/owlCarousel/owl.carousel.min.js" ></script>
-<script data-senna-track="temporary" type="text/javascript" src="${javascript_folder}/pagination.min.js" ></script>
-
 
 </body>
 

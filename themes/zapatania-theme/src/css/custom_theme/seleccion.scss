@@ -16,3 +16,73 @@
         }
     }
 }
+.pagination-bar{
+    justify-content: center;
+    .pagination-results{
+        display: none;
+    }
+    .pagination{
+        .page-item{
+            &:first-child{
+                margin-right: 70px;
+                width: 100px;
+                .page-link{
+                    &::after{
+                        content: "Anterior";
+                        color: black;
+                    }
+                    span{
+                        color: black;
+                    }
+                }
+            }
+            &:last-child{
+                margin-left: 70px;
+                width: 100px;
+                .page-link{
+                    &::before{
+                        content: "Siguiente";
+                        color: black;
+                    }
+                    span{
+                        color: black;
+                    }
+                }
+            }
+            align-items: center;
+            border: 1px solid var(--primary-purple, #4b0082);
+            border-radius: 20px;
+            display: flex;
+            height: 35px;
+            justify-content: center;
+            width: 35px;
+            &:hover{
+                background-color: transparent;
+            }
+            &.active{
+                background-color: var(--primary-purple, #4b0082);
+                color: var(--white, #ffffff);
+                .page-link{
+                    color: var(--white, #ffffff);
+                }
+            }
+        }
+        .page-link{
+            background-color: transparent;
+            height: 35px;
+            width: 35px;
+            &:first-child{
+                padding-right: 0px;
+            }
+            &:last-child{
+                padding-left: 0px;
+            }
+            &:focus{
+                box-shadow: none;
+                outline: none;
+            }
+
+        }
+
+    }
+}
