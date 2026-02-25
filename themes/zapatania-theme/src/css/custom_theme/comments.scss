@@ -84,3 +84,24 @@
         }
     }
 }
+
+#portlet_com_liferay_comment_page_comments_web_portlet_PageCommentsPortlet{
+    margin-top: 30px;
+    h1{
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    .btn-outline-secondary{
+        background-color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
+        color: var(--white, #ffffff);
+        &:hover{
+            background-color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
+            color: var(--white, #ffffff);
+        }
+    }
+    .panel-body{
+        > .autofit-row{
+            display: none;
+        }
+    }
+}

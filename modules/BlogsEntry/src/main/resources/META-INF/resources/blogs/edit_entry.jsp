@@ -94,7 +94,7 @@ renderResponse.setTitle(blogsEditEntryDisplayContext.getPageTitle(resourceBundle
 							cssClass="mx-md-auto"
 							md="8"
 						>
-							<div class="cover-image-caption <%= (blogsEditEntryDisplayContext.getCoverImageFileEntryId() == 0) ? "invisible d-none" : "d-none" %>">
+							<div class="cover-image-caption <%= (blogsEditEntryDisplayContext.getCoverImageFileEntryId() == 0) ? "invisible" : "" %>">
 								<small>
 									<textarea 
 										name="coverImageCaptionEditor" 
@@ -481,7 +481,6 @@ else {
 			'/o/liferay-zapatania-admin-theme/css/main.css',
 		]
 	} );
-
-	window[`_com_liferay_blogs_web_portlet_BlogsAdminPortlet_contentEditor`] = document.getElementById('customEditorBlogContent');
+	window[`<%= liferayPortletResponse.getNamespace()%>contentEditor`] = document.getElementById('customEditorBlogContent');
 
 </script>

@@ -29,11 +29,12 @@ function initPrincipalOwlCarousel() {
 }
 
 function initSectionOwlCarousel() {
-    if ($('.owl-section-carrusel').length > 0) {
-        $('.owl-section-carrusel').owlCarousel({
+    if ($('.owl-related-carrusel').length > 0) {
+        $('.owl-related-carrusel').owlCarousel({
             loop:true,
             margin:10,
             nav:true,
+            navText: ['<span class="owl-principal-left"> </span>', '<span class="owl-principal-right"> </span>' ],
             responsive:{
                 0:{
                     items:1
