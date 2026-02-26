@@ -10,6 +10,8 @@ import com.liferay.expando.kernel.service.ExpandoValueLocalService;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.WebKeys;
@@ -40,6 +42,8 @@ import java.util.*;
 )
 public class BlogAutorPortlet extends MVCPortlet {
 
+	private static final Log log = LogFactoryUtil.getLog(BlogAutorPortlet.class);
+
 	@Override
 	public void doView(
 			RenderRequest renderRequest, RenderResponse renderResponse)
@@ -51,44 +55,57 @@ public class BlogAutorPortlet extends MVCPortlet {
 		// Retrieve the ExpandoTable for BlogsEntry and get the column "autor"
 		ExpandoTable expandoTable = null;
 		ExpandoColumn autorColumn = null;
+		ExpandoColumn nacionalidadColumn = null;
 		try {
 			expandoTable = expandoTableLocalService.getDefaultTable(
 				companyId, BlogsEntry.class.getName() );
 			autorColumn = expandoColumnLocalService.getColumn(expandoTable.getTableId(), "autor");
+			nacionalidadColumn = expandoColumnLocalService.getColumn(expandoTable.getTableId(), "nacionalidad");
 		} catch (PortalException e) {
 			// Could not get table or column, exit early
 			renderRequest.setAttribute("autores", new ArrayList<String>());
+			renderRequest.setAttribute("nacionalidades", new ArrayList<String>());
 			// Optionally log error
 		}
 
-		Set<String> autoresSet = new HashSet<>();
-		if (autorColumn != null) {
-			// Use dynamic query to fetch all ExpandoValues for the "autor" column (unique, non-repeated)
-			try {
-				List<ExpandoValue> autorValues = expandoValueLocalService.dynamicQuery(
-					DynamicQueryFactoryUtil
-						.forClass(ExpandoValue.class, this.getClass().getClassLoader())
-						.add( RestrictionsFactoryUtil.eq("columnId", autorColumn.getColumnId()))
-				);
-
-				for (ExpandoValue value : autorValues) {
-					String autor = value.getString();
-					if (autor != null && !autor.trim().isEmpty()) {
-						autoresSet.add(autor.trim());
-					}
-				}
-			} catch (Exception ex) {
-				// Optionally log error
-			}
+		if( autorColumn != null  ) {
+			List<String> autores = getDataByColumn(autorColumn);
+			Collections.sort(autores, String.CASE_INSENSITIVE_ORDER);
+			renderRequest.setAttribute("autores", autores);
 		}
 
-		List<String> autores = new ArrayList<>(autoresSet);
-		Collections.sort(autores, String.CASE_INSENSITIVE_ORDER);
-
-		renderRequest.setAttribute("autores", autores);
-		
+		if( nacionalidadColumn != null  ) {
+			List<String> nacionalidades = getDataByColumn(nacionalidadColumn);
+			Collections.sort(nacionalidades, String.CASE_INSENSITIVE_ORDER);
+			renderRequest.setAttribute("nacionalidades", nacionalidades);
+		}
 
 		super.doView(renderRequest, renderResponse);
+	}
+
+	private List<String> getDataByColumn(ExpandoColumn expandoColumn) {
+		Set<String> dataSet = new HashSet<>();
+		if( expandoColumn == null ) {
+			log.error("Expando column is null");
+			return new ArrayList<>();
+		}
+		try {
+			List<ExpandoValue> dataValues = expandoValueLocalService.dynamicQuery(
+				DynamicQueryFactoryUtil
+					.forClass(ExpandoValue.class, this.getClass().getClassLoader())
+					.add( RestrictionsFactoryUtil.eq("columnId", expandoColumn.getColumnId()))
+			);
+
+			for (ExpandoValue value : dataValues) {
+				String data = value.getString();
+				if (data != null && !data.trim().isEmpty()) {
+					dataSet.add(data.trim());
+				}
+			}
+		} catch (Exception ex) {
+			log.error("Error getting data by column", ex);
+		}
+		return new ArrayList<>(dataSet);
 	}
 
 	@Reference

@@ -30,13 +30,28 @@
                                     <c:set var="letter" value="${autor.substring(0,1)}" scope="page" />
                                     <li class="letter">${letter}</li>
                                 </c:if>
-                                <li class="autor">${autor}</li>
+                                <a href="/autor?autor=${autor}">
+                                    <li class="autor">${autor}</li>
+                                </a>
                             </c:forEach>
                         </ul>
                     </c:if>
                 </div>
                 <div class="tab-pane fade" id="nacionalidad" role="tabpanel" aria-labelledby="nacionalidad-tab">
-                    <!-- Contenido de Nacionalidad -->
+                    <c:set var="letter" value="" scope="page" />
+                    <c:if test="${not empty nacionalidades}">
+                        <ul>
+                            <c:forEach var="nacionalidad" items="${nacionalidades}">
+                                <c:if test="${empty letter or letter ne nacionalidad.substring(0,1)}">
+                                    <c:set var="letter" value="${nacionalidad.substring(0,1)}" scope="page" />
+                                    <li class="letter">${letter}</li>
+                                </c:if>
+                                <a href="/autor?nacionalidad=${nacionalidad}">
+                                    <li class="nacionalidad">${nacionalidad}</li>
+                                </a>
+                            </c:forEach>
+                        </ul>
+                    </c:if>
                 </div>
             </div>
         </div>

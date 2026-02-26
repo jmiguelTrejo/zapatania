@@ -18,17 +18,6 @@
                     <#else>
                         <img src="/documents/d/guest/chris_muschard-ink-5067880_1280"  alt="imagen generica blog" class="principal-carrusel-image" />
                 </#if>
-                <h4 class=" pl-4 mt-3">
-                    ${curEntry.title}
-                </h4>
-                <p class="pl-4  mt-3">
-                    <#if curEntry.description?has_content>
-                        ${curEntry.description}
-                    <#else>
-                        ${curEntry.summary?replace('<[^>]+>', '', 'r')}
-                    </#if>
-                </p>
-							
             </div>
         </#list>
     </#if>

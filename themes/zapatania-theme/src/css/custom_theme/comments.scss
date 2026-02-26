@@ -98,6 +98,9 @@
             background-color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
             color: var(--white, #ffffff);
         }
+        &:focus{
+            box-shadow: none;
+        }
     }
     .panel-body{
         > .autofit-row{
