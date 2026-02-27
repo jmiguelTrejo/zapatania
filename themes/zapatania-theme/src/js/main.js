@@ -3,6 +3,7 @@ Liferay.on('allPortletsReady', function() {
     initPrincipalOwlCarousel();
     initSectionOwlCarousel();
     initSubscribeForm();
+    checkAndAddTypeParameter();
 });
 
 function initPrincipalOwlCarousel() {
@@ -91,4 +92,28 @@ function initSubscribeForm() {
         });
     });
     return false;
+}
+
+function checkAndAddTypeParameter() {
+    // Obtener la URL actual
+    var currentUrl = window.location.href;
+    
+    // Verificar si la URL contiene "/buscar"
+    if (currentUrl.indexOf('/buscar') !== -1) {
+        // Crear un objeto URL para manejar los parámetros
+        var url = new URL(currentUrl);
+        var searchParams = url.searchParams;
+        
+        // Verificar si el parámetro "type" no existe
+        if (!searchParams.has('type')) {
+            // Agregar el parámetro "type" con el valor especificado
+            searchParams.set('type', 'com.liferay.blogs.model.BlogsEntry');
+            
+            // Actualizar la URL con el nuevo parámetro
+            var newUrl = url.toString();
+            
+            // Redirigir a la nueva URL (usando replace para no agregar entrada al historial)
+            window.location.replace(newUrl);
+        }
+    }
 }

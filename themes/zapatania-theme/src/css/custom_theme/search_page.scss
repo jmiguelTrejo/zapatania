@@ -1,0 +1,88 @@
+
+#content{
+    &.container{
+        max-width: 100%;
+        padding-top: 30px;
+        .portlet-search-bar{
+            background-color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
+            .portlet-title-text{
+                color: var(--white, #ffffff);
+            }
+            .input-group{
+                .form-control{
+                    &:focus{
+                        box-shadow: none;
+                        border-color: transparent
+                    }
+                }
+                .search-bar-keywords-input{
+                    background-color: var(--white, #ffffff);
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                .input-group-inset-item{
+                    background-color: var(--white, #ffffff);
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    &:focus{
+                        border-color: var(--white, #ffffff);
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+        #column-2{
+            max-width: 20%;
+        }
+        #column-3{
+            flex: 0 0 60%;
+            max-width: 60%;
+            width: 60%;
+            .portlet-title-text{
+                color: var(--black, #000000);
+                font-size: 1.25rem;
+                font-weight: 900;
+            }
+        }
+        #column-4{
+            max-width: 20%;
+            .portlet-title-text{
+                display: none;
+            }
+            
+        }
+        #column-5{
+            
+        }
+        .portlet-type-facet{
+            display: none;
+        }
+        .portlet-category-facet{
+            .portlet-header{
+                display: none;
+            }
+            .collapse-icon{
+                background-color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
+                border-radius: 10px;
+                color: var(--white, #ffffff);
+            }
+            .custom-control-label {
+                color: var(--black, #000000);
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+            strong{
+                color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
+                font-size: 1.25rem;
+                font-weight: 500;
+                &:hover{
+                    color: var(--alpha-purple, rgba(107, 41, 128, 0.95));
+                    font-weight: 500;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+
+}

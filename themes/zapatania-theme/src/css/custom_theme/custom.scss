@@ -2,6 +2,7 @@
 @import "colors";
 @import "search";
 .zapatania-container{
+    @import "autor_card";
     @import "banner";
     @import "card";
     @import "comments";
@@ -15,6 +16,7 @@
     @import "owl_section";
     @import "autors";
     @import "seleccion";
+    @import "search_page";
 }
 
 .cke_editable{

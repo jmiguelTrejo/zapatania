@@ -1,0 +1,45 @@
+.autor-card-container{
+    background-color: var(--white, #ffffff);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    a{
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+        }
+        .autor-card{
+            border: 1px solid var(--alpha-purple, rgba(107, 41, 128, 0.95));
+            border-radius: 20px;
+            height: 400px;
+            max-height: 400px;
+            margin-bottom: 20px;
+            padding: 20px;
+            .autor-card-content{
+                color: var(--black, #000000);
+                img{
+                    border-radius: 20px;
+                    height: 200px;
+                    max-height: 200px;
+                    object-fit: cover;
+                    width: 100%;
+                }
+                .autor-card-title{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+                .autor-card-subtitle{
+                    font-size: 1rem;
+                    font-weight: 400;
+                    max-height: 100px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: wrap;
+                }
+            }
+
+        }
+    }
+
+}

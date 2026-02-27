@@ -50,5 +50,17 @@
                 text-transform: capitalize;
             }
         }
+        a{
+            .autor, .nacionalidad{
+                color: var(--black,#000000);
+                text-decoration: none;
+                &:hover{
+                    color: var(--primary-purple,#4b0082);
+                    font-weight: 900;
+                    text-decoration: underline;
+                }
+            }
+
+        }
     }
 }

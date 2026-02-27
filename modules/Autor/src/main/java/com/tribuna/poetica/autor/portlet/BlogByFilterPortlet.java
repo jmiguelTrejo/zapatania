@@ -68,13 +68,14 @@ public class BlogByFilterPortlet extends MVCPortlet {
 
 		List<BlogsEntry> result;
 		List<BlogInfo> biList = new ArrayList<>();
-		log.info("Autor: " + autor);
-		log.info("Nacionalidad: " + nacionalidad);
+		String sectionTitle = "";
 
 		if( !autor.isEmpty() ){
 			result = getBlogsByFilter( companyId, "autor", autor );
+			sectionTitle = "Poemas de " + autor;
 		}else{
 			result = getBlogsByFilter( companyId, "nacionalidad", nacionalidad );
+			sectionTitle = "Poemas de nacionalidad " + nacionalidad;
 		}
 
 		if( !result.isEmpty() ){
@@ -84,6 +85,7 @@ public class BlogByFilterPortlet extends MVCPortlet {
 		}
 
 		renderRequest.setAttribute("blogs", biList);
+		renderRequest.setAttribute("sectionTitle", sectionTitle);
         super.doView(renderRequest, renderResponse);
 
     }
@@ -187,6 +189,9 @@ public class BlogByFilterPortlet extends MVCPortlet {
 		String result = "";
 		if( blog.getContent() != null && !blog.getContent().isEmpty() ){
 			result = blog.getContent().replaceAll("<[^>]*>", "");
+			if (result.length() > 200) {
+				result = result.substring(0, 200) + "...";
+			}
 		}
 		return result;
 	}
