@@ -18,10 +18,10 @@ function initPrincipalOwlCarousel() {
                 0:{
                     items:1
                 },
-                600:{
+                768:{
                     items:2
                 },
-                1000:{
+                992:{
                     items:3
                 }
             }
@@ -40,10 +40,10 @@ function initSectionOwlCarousel() {
                 0:{
                     items:1
                 },
-                600:{
+                768:{
                     items:2
                 },
-                1000:{
+                992:{
                     items:3
                 }
             }

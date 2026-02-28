@@ -1,19 +1,37 @@
 .selection-container{
-    margin-top: 20px;
+    margin-top: 30px;
     .selection-row{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         width: 100%;
         .selection-item{
-            width: 23%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
             .selection-image{
                 border-radius: 30px;
                 height: 150px;
                 object-fit: cover;
-                width: 100%;
+                width: 80%;
             }
         }
+        @media (max-width: 991px) {
+            .selection-item{
+                .selection-image{
+                    width: 85%;
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            .selection-item{
+                .selection-image{
+                    width: 90%;
+                }
+            }
+        }
+
     }
 }
 .pagination-bar{
