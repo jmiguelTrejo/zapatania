@@ -14,3 +14,16 @@
         background-color: var(--background-purple,#e3d7eb);
     }
 }
+
+@media (max-width: 991px) {
+    .tribuna-dz{
+        > .col-md-3{
+            width: 100%!important;
+            max-width: 100%!important;
+        }
+        > .col-md-9 {
+            width: 100%!important;
+            max-width: 100%!important;
+        }
+    }
+}

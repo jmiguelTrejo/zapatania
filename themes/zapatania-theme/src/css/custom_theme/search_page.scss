@@ -82,6 +82,19 @@
                 }
             }
         }
+    @media (max-width: 991px) {
+        #column-2,
+        #column-4,
+        #column-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+        }
+        .portlet-category-facet .custom-control-label,
+        .portlet-category-facet strong {
+            font-size: 1rem;
+        }
+    }
 
     }
 

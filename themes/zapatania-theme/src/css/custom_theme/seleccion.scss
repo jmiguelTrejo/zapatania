@@ -20,14 +20,18 @@
         @media (max-width: 991px) {
             .selection-item{
                 .selection-image{
-                    width: 85%;
+                    width: 75%;
+                    height: 150px;
+                    max-height: 150px;
                 }
             }
         }
         @media (max-width: 767px) {
             .selection-item{
                 .selection-image{
-                    width: 90%;
+                    height: 200px;
+                    max-height: 200px;
+                    width: 85%;
                 }
             }
         }
@@ -103,5 +107,17 @@
 
         }
 
+    }
+    @media (max-width: 767px) {
+        .pagination{
+            .page-item{
+                &:first-child{
+                    margin-right: 0px;
+                }
+            }
+            &:last-child{
+                margin-left: 0px;
+            }
+        }
     }
 }

@@ -117,3 +117,10 @@ function checkAndAddTypeParameter() {
         }
     }
 }
+
+
+$('body').on('click', '.fixed-phone-autor', function() {
+    $('.autores-container').toggleClass('show');
+});
+
+
